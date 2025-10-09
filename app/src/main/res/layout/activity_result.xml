@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:background="@color/backgroundColor">
+
+    <TextView
+        android:id="@+id/textView_result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="あなたの診断結果は..."
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_result_title"
+        tools:text="50% 左派 / 50% 右派" />
+
+
+    <ImageView
+        android:id="@+id/image_user_result_indicator"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_user_indicator_arrow"
+        app:layout_constraintBottom_toTopOf="@id/spectrum_axis"
+        app:layout_constraintEnd_toEndOf="@id/spectrum_axis"
+        app:layout_constraintStart_toStartOf="@id/spectrum_axis"
+        app:layout_constraintHorizontal_bias="0.5" />
+
+
+    <View
+        android:id="@+id/spectrum_axis"
+        android:layout_width="0dp"
+        android:layout_height="4dp"
+        android:background="@drawable/gradient_spectrum_axis"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.9" />
+
+    <TextView
+        android:id="@+id/label_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="左派"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/image_user_result_indicator"
+        app:layout_constraintStart_toStartOf="@id/spectrum_axis" />
+
+    <TextView
+        android:id="@+id/label_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="右派"
+        android:textColor="#0000FF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/image_user_result_indicator"
+        app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+
+
+    <TextView android:id="@+id/party_kyosan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="共産" android:ems="1" app:layout_constraintHorizontal_bias="0.05" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_shamin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="社民" android:ems="1" app:layout_constraintHorizontal_bias="0.15" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_komei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="公明" android:ems="1" app:layout_constraintHorizontal_bias="0.25" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_reiwa" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="れいわ" android:ems="1" app:layout_constraintHorizontal_bias="0.35" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_rikken" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立憲" android:ems="1" app:layout_constraintHorizontal_bias="0.45" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_jimin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自民" android:ems="1" app:layout_constraintHorizontal_bias="0.55" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_kokumin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="国民" android:ems="1" app:layout_constraintHorizontal_bias="0.65" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_ishin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="維新" android:ems="1" app:layout_constraintHorizontal_bias="0.75" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_sansei" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="参政" android:ems="1" app:layout_constraintHorizontal_bias="0.85" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView android:id="@+id/party_hoshu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="保守" android:ems="1" app:layout_constraintHorizontal_bias="0.95" app:layout_constraintTop_toBottomOf="@id/spectrum_axis" app:layout_constraintStart_toStartOf="@id/spectrum_axis" app:layout_constraintEnd_toEndOf="@id/spectrum_axis" />
+    <TextView
+        android:id="@+id/textView_closest_parties"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/spectrum_axis"
+        app:layout_constraintStart_toStartOf="@id/spectrum_axis"
+        app:layout_constraintTop_toBottomOf="@id/party_hoshu"
+        tools:text="あなたの政治的思考は〇〇党・〇〇党・〇〇党に近い傾向にあります！" />
+
+    <Button
+        android:id="@+id/button_back_to_menu"
+        style="@style/Widget.Material3.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="メニューに戻る"
+        android:textColor="@android:color/white"
+        app:backgroundTint="@color/buttonColor"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

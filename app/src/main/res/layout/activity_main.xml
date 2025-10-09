@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="32dp"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/image_app_logo"
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_app_logo" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="選挙対策委員会"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/textColorPrimary"
+        android:layout_marginTop="8dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="100dp">
+
+
+<!--        <Button-->
+<!--            android:id="@+id/button_chart"-->
+<!--            style="@style/Widget.AppCompat.Button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="政治AI"-->
+<!--            android:background="@drawable/button_background"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:layout_marginBottom="16dp"/>-->
+
+        <Button
+            android:id="@+id/button_chart"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="政治AI"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            app:backgroundTint="@color/buttonColor"
+            app:cornerRadius="24dp"/>
+
+
+<!--        <Button-->
+<!--            android:id="@+id/button_diagnosis"-->
+<!--            style="@style/Widget.AppCompat.Button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="みぎひだり診断"-->
+<!--            android:background="@drawable/button_background"-->
+<!--            android:textColor="@android:color/white"-->
+<!--            android:layout_marginBottom="16dp"/>-->
+
+        <Button
+            android:id="@+id/button_diagnosis"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="みぎひだり診断"
+            android:textColor="@android:color/white"
+            android:layout_marginBottom="16dp"
+            app:backgroundTint="@color/buttonColor"
+            app:cornerRadius="24dp" />
+
+
+<!--        <Button-->
+<!--            android:id="@+id/button_else"-->
+<!--            style="@style/Widget.AppCompat.Button"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="credit title"-->
+<!--            android:background="@drawable/button_background"-->
+<!--            android:textColor="@android:color/white"/>-->
+
+
+        <Button
+            android:id="@+id/button_else"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="credit title"
+            android:textColor="@android:color/white"
+            app:backgroundTint="@color/buttonColor"
+            app:cornerRadius="24dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

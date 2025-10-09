@@ -1,0 +1,30 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景円 -->
+  <circle cx="100" cy="100" r="90" fill="#7C3AED" stroke="none"/>
+  
+  <!-- 投票箱のシルエット -->
+  <rect x="65" y="80" width="70" height="50" rx="4" fill="white"/>
+  <rect x="60" y="75" width="80" height="8" rx="4" fill="white"/>
+  
+  <!-- 投票箱に「AI」の文字 -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#7C3AED">AI</text>
+  
+  <!-- 投票用紙を入れるスリット -->
+  <rect x="85" y="78" width="30" height="2" fill="#7C3AED"/>
+  
+  <!-- 投票用紙（縦向き・投票箱の真上） -->
+  <rect x="90" y="45" width="20" height="30" rx="2" fill="white" transform="rotate(5 100 60)"/>
+  <!-- 投票用紙の文字（候補者名のイメージ） -->
+  <line x1="93" y1="50" x2="107" y2="50" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  <line x1="93" y1="54" x2="107" y2="54" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  <line x1="93" y1="58" x2="107" y2="58" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  <line x1="93" y1="62" x2="107" y2="62" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  <line x1="93" y1="66" x2="107" y2="66" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  <!-- チェックマーク -->
+  <circle cx="95" cy="58" r="2" fill="none" stroke="#7C3AED" stroke-width="1" transform="rotate(5 100 60)"/>
+  <polyline points="93.5,58 94.5,59 97,56.5" fill="none" stroke="#7C3AED" stroke-width="1.2" transform="rotate(5 100 60)"/>
+  
+  <!-- 文字「投票」 -->
+  <text x="100" y="155" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="white">投票率向上</text>
+  <text x="100" y="175" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="middle" fill="white">委員会</text>
+</svg>

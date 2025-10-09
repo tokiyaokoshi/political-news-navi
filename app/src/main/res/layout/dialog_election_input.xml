@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="投票年（西暦）"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/dialog_edittext_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="例: 2025"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="都道府県"
+        android:textColor="@color/black"/>
+
+    <Spinner
+        android:id="@+id/dialog_spinner_prefecture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="市区町村"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/dialog_edittext_municipality"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="例: 大阪市北区"
+        android:inputType="text" />
+
+</LinearLayout>
