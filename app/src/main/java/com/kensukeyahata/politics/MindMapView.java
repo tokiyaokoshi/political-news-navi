@@ -46,7 +46,7 @@ public class MindMapView extends View {
     //拡大縮小
     private ScaleGestureDetector scaleGestureDetector;
     private float scaleFactor = 1.0f;
-    private final float minScaleFactor = 0.8f;
+    private final float minScaleFactor = 0.2f;
     private final float maxScaleFactor = 2.5f;
     private float scrollX = 0f;
     private float scrollY = 0f;
