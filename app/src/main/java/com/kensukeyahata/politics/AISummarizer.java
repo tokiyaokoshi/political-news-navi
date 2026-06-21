@@ -39,7 +39,7 @@ public class AISummarizer {
             Log.d(TAG, "【2. 検索完了】結果: \n" + searchResults);
             return CompletableFuture.supplyAsync(() -> {
                 try {
-                    // 🛠️ 修正ポイント2: 順番に処理する際、Geminiの無料枠制限を回避するために1.5秒の待機時間を挟みます
+                    // 🛠️ 修正ポイント2: 順番に処理する際、Geminiの無料枠制限を回避するために6秒の待機時間を挟みます
                     Log.d(TAG, "【制限回避】待機中... (" + partyName + ")");
                     Thread.sleep(6000);
 
