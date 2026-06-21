@@ -8,7 +8,6 @@ import com.google.ai.client.generativeai.type.Content;
 import com.google.ai.client.generativeai.type.GenerateContentResponse;
 import com.google.common.util.concurrent.ListenableFuture;
 
-
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -26,10 +25,11 @@ public class AISummarizer {
                 com.kensukeyahata.politics.BuildConfig.GEMINI_API_KEY
         );
         this.modelFutures = GenerativeModelFutures.from(generativeModel);
-        this.executorService = Executors.newFixedThreadPool(4);
+
+        // 🛠️ 修正ポイント1: スレッド数を「1」にして、各政党のAI処理が順番（直列）に実行されるようにします
+        this.executorService = Executors.newSingleThreadExecutor();
         this.searchClient = new GoogleSearchClient();
     }
-
 
     public CompletableFuture<String> getPolicySummary(String partyName, String topic) {
         String searchQuery = partyName + " " + topic + " 政策";
@@ -39,18 +39,21 @@ public class AISummarizer {
             Log.d(TAG, "【2. 検索完了】結果: \n" + searchResults);
             return CompletableFuture.supplyAsync(() -> {
                 try {
+                    // 🛠️ 修正ポイント2: 順番に処理する際、Geminiの無料枠制限を回避するために1.5秒の待機時間を挟みます
+                    Log.d(TAG, "【制限回避】待機中... (" + partyName + ")");
+                    Thread.sleep(6000);
+
                     String prompt = String.format(
                             "日本の政党である「%s」の「%s」に関する現在の基本的な方針や立場を、" +
                                     "専門知識がない人にも分かりやすく50字以内で簡潔に説明してください。"+
                                     "またその方針についてメリットデメリットをそれぞれ50字以内で簡潔に説明してください"+
-                                    "回答は方針 : ,メリット : ,デメリット : ,の3行のテキストでお願いします\n\n"+
+                                    "回答は方針 : ,メリット : ,デメリット : ,の3行的テキストでお願いします\n\n"+
                                     "--- 参考情報 ---\n%s",
                             partyName, topic, searchResults
                     );
 
                     Log.d(TAG, "【3. AI要約開始】プロンプト: \n" + prompt);
                     Content content = new Content.Builder().addText(prompt).build();
-
 
                     ListenableFuture<GenerateContentResponse> future = modelFutures.generateContent(content);
                     GenerateContentResponse response = future.get();
@@ -68,6 +71,7 @@ public class AISummarizer {
         });
     }
 
+    // --- 以下の getCandidateInfo や shutdown は修正不要（そのまま） ---
     public CompletableFuture<String> getCandidateInfo(String electionType, String year, String prefecture, String municipality) {
         String searchQuery = year + "年 " + electionType + " " + prefecture + municipality + " 候補者";
         Log.d(TAG, "【1. 検索開始】クエリ: " + searchQuery);
@@ -82,7 +86,6 @@ public class AISummarizer {
                                     "候補者名1: 公約1\n" +
                                     "候補者名2: 公約2"+
                                     "--- 参考情報 ---\n%s",
-//                            year, electionType, prefecture, municipality,
                             searchResults
                     );
                     Log.d(TAG, "【3. AI要約開始】プロンプト: \n" + prompt);
